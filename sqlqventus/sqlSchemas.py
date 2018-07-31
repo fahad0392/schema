@@ -57,7 +57,7 @@ create table encounter_master(
 	qv_created_src varchar(128),
 	qv_created_ts timestamp default current_timestamp,
 	qv_updated_src varchar(128),
-	qv_updated_ts timestamp on update current_timestamp
+	qv_updated_ts timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 
 
 );
