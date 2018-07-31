@@ -1,0 +1,5 @@
+setup.py
+qventusdbschemas.egg-info/PKG-INFO
+qventusdbschemas.egg-info/SOURCES.txt
+qventusdbschemas.egg-info/dependency_links.txt
+qventusdbschemas.egg-info/top_level.txt
