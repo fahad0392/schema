@@ -62,4 +62,43 @@ create table encounter_master(
 
 );
 CREATE UNIQUE INDEX instance_index ON encounter_master (hospital, instance2);
+
+create table med_admin(
+	id integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	hospital integer NOT NULL REFERENCES main_hospital (id),
+	instance1 varchar(128),
+	instance2 varchar(128),
+	instance3 varchar(128),
+	instance5 varchar(128),
+	admin_event_id varchar(128),
+	order_id varchar(128),
+	internal_med_id varchar(128),
+	med_name varchar(128),
+	ndc_code varchar(128),
+	dose_given varchar(128),
+	dose_route varchar(128),
+	admin_name varchar(128),
+	admin_id varchar(128),
+	admin_role varchar(128),
+	admin_event_type varchar(128),
+	admin_event_time datetime,
+	admin_due_time datetime,
+	admin_verify_time datetime,
+	admin_verify_user varchar(128),
+	barcode_scan varchar(128),
+	qv_created_src varchar(128),
+	qv_created_ts timestamp default current_timestamp,
+	qv_updated_src varchar(128),
+	qv_updated_ts timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+CREATE UNIQUE index instance_index on med_admin(hospital, order_id, admin_event_id);
+CREATE index instance1_index on med_admin(hospital, instance1);
+
+CREATE index instance2_index on med_admin(hospital, instance2);
+
+CREATE index instance3_index on med_admin(hospital, instance3);
+
+CREATE index admin_event_time_index on med_admin(hospital, admin_event_time);
+
+CREATE index med_name_index on med_admin(hospital, med_name);
 """
